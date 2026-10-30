@@ -79,6 +79,120 @@
     .project h3{font-size:1.35rem;letter-spacing:-.04em;margin:16px 0 9px}.project p{color:#bdc7bd;font-size:.9rem;margin:0}
     .metric{display:inline-flex;margin-top:20px;padding:8px 11px;border-radius:9px;background:#293522;color:var(--accent);font: .75rem 'DM Mono',monospace}
     .edu-list{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    /* Layout Wrapper */
+.education-timeline-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  margin-top: 24px;
+}
+
+/* Base Card Styling */
+.panel-card, .edu-card {
+  background-color: #141414; /* Matches your dark slate background */
+  border: 1px solid #222222;
+  border-radius: 12px;
+  padding: 24px;
+  transition: border-color 0.3s ease;
+}
+
+.panel-card:hover, .edu-card:hover {
+  border-color: var(--accent);
+}
+
+/* Master's Spotlight Card */
+.master-card {
+  border-left: 4px solid var(--accent);
+}
+
+.timeline-date-badge {
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.institution-main {
+  color: var(--muted);
+  font-size: 15px;
+  margin-top: 4px;
+  margin-bottom: 20px;
+}
+
+/* Nested Custom Track Indicators */
+.nested-track {
+  position: relative;
+  border-left: 2px solid #2d2d2d;
+  padding-left: 20px;
+  margin-left: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.track-item {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+}
+
+.track-dot {
+  position: absolute;
+  left: -26px;
+  top: 5px;
+  width: 10px;
+  height: 10px;
+  background-color: var(--accent);
+  border-radius: 50%;
+}
+
+.track-dot.placeholder-dot {
+  background-color: #141414;
+  border: 2px solid var(--muted);
+}
+
+.track-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.track-content strong {
+  font-size: 15px;
+  color: #ffffff;
+}
+
+.track-date {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+/* Grid Layout for Past History */
+.edu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.card-date {
+  color: var(--muted);
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+.edu-card h3 {
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+.edu-card p {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.4;
+}
+
     .edu{background:var(--panel);border:1px solid var(--line);border-radius:15px;padding:20px}.edu .year{font: .7rem 'DM Mono',monospace;color:var(--accent)}.edu h3{font-size:.96rem;margin:10px 0 4px}.edu p{font-size:.8rem;color:var(--muted);margin:0}
     .extra-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
     .list{margin:12px 0 0;padding:0;list-style:none}.list li{padding:11px 0;border-top:1px solid var(--line);color:#c2cbc2;font-size:.86rem}.list b{color:var(--text)}
@@ -183,40 +297,58 @@
 
   <section class="section" id="education"><div class="wrap">
     <div class="section-head reveal"><div><div class="kicker">05 / Education</div><h2>Learning, always.</h2></div><p class="section-note">Academic foundations in electrical engineering, alongside ongoing advanced studies in renewable energy.</p></div>
-    <div class="edu-list">
-      <article class="edu reveal"><div class="year">2019 — 2023</div><h3>Bachelor's Degree</h3><p>BVB's Sardar Patel College of Engineering</p></article>
-      <article class="edu reveal"><div class="year">2019</div><h3>Class 12</h3><p>Prakash College of Science</p></article>
-      <article class="edu reveal"><div class="year">2017</div><h3>Class 10</h3><p>Marol Education Academy's High School</p></article>
-    </div>
-    <div class="panel reveal" style="margin-top:14px">
-
-  <span style="color:var(--accent); font-size:13px; letter-spacing:1px;">
-    2026 – 2028
-  </span>
-
-  <h3 style="margin-top:10px;">Master's in Renewable Energies</h3>
-
-  <p style="color:var(--muted); margin-bottom:16px;">
-    InnoEnergy
-  </p>
-
-  <div style="border-left:2px solid var(--accent); padding-left:16px; margin-top:12px;">
-
-    <div style="margin-bottom:14px;">
-      <strong>Instituto Superior Técnico</strong>
-      <p style="color:var(--muted); margin:4px 0;">
-        2026 – 2027
-      </p>
+    <div class="education-timeline-container">
+  
+  <!-- 1. Current / Future Education (Master's) -->
+  <div class="panel-card master-card reveal">
+    <div class="card-header">
+      <span class="timeline-date-badge">2026 – 2028</span>
+      <h3>Master's in Renewable Energies</h3>
+      <p class="institution-main">InnoEnergy</p>
     </div>
 
-    <div>
-      <strong>Second University (TBD)</strong>
-      <p style="color:var(--muted); margin:4px 0;">
-        2027 – 2028
-      </p>
+    <!-- Sub-tracks inside Master's -->
+    <div class="nested-track">
+      <div class="track-item">
+        <div class="track-dot"></div>
+        <div class="track-content">
+          <strong>Instituto Superior Técnico</strong>
+          <span class="track-date">2026 – 2027</span>
+        </div>
+      </div>
+      <div class="track-item">
+        <div class="track-dot placeholder-dot"></div>
+        <div class="track-content">
+          <strong>Second University (TBD)</strong>
+          <span class="track-date">2027 – 2028</span>
+        </div>
+      </div>
     </div>
-
   </div>
+
+  <!-- 2. Past Education History Grid -->
+  <div class="edu-grid">
+    <article class="edu-card reveal">
+      <div class="card-date">2019 — 2023</div>
+      <h3>Bachelor's Degree</h3>
+      <p>BVB's Sardar Patel College of Engineering</p>
+    </article>
+
+    <article class="edu-card reveal">
+      <div class="card-date">2019</div>
+      <h3>Class 12</h3>
+      <p>Prakash College of Science</p>
+    </article>
+
+    <article class="edu-card reveal">
+      <div class="card-date">2017</div>
+      <h3>Class 10</h3>
+      <p>Marol Education Academy's High School</p>
+    </article>
+  </div>
+
+</div>
+
 
 </div></section>
 
