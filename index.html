@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111512">
+  <meta name="description" content="Harsh Chougule — Electrical Engineering, power sector experience and renewable energy.">
+  <title>Harsh Chougule — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#101411;--panel:#171d19;--panel2:#1d251f;--text:#f1f3ed;--muted:#a4afa5;--line:#303a32;--accent:#c7ef78;--accent2:#d8f4a7;--max:1120px}
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:var(--bg);color:var(--text);font-family:Manrope,system-ui,sans-serif;line-height:1.6}
+    a{color:inherit;text-decoration:none} button{font:inherit}
+    .wrap{width:min(var(--max),calc(100% - 44px));margin:auto}
+    .topbar{position:sticky;top:0;z-index:20;background:rgba(16,20,17,.88);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.07)}
+    .nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{font-weight:800;letter-spacing:-.08em;font-size:1.35rem}.brand span{color:var(--accent)}
+    .navlinks{display:flex;gap:5px;align-items:center}
+    .navlinks a{font-size:.82rem;color:var(--muted);padding:10px 13px;border-radius:999px;transition:.2s}
+    .navlinks a:hover,.navlinks a.active{background:var(--panel2);color:var(--text)}
+    .navlinks a.active{box-shadow:inset 0 0 0 1px var(--line)}
+    .menu{display:none;border:1px solid var(--line);background:var(--panel);color:var(--text);border-radius:10px;padding:9px 12px}
+    section{scroll-margin-top:96px}
+    .hero{min-height:650px;display:grid;grid-template-columns:1.25fr .75fr;align-items:center;gap:60px;padding:90px 0 84px}
+    .eyebrow,.kicker{font:500 .72rem 'DM Mono',monospace;letter-spacing:.13em;text-transform:uppercase;color:var(--accent)}
+    h1{font-size:clamp(3.5rem,8vw,7.1rem);line-height:.99;letter-spacing:-.085em;margin:22px 0 24px;font-weight:700}
+    h1 em{font-style:normal;color:var(--accent)}
+    .intro{font-size:1.08rem;line-height:1.85;color:#c1c9c0;max-width:620px}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:13px 18px;border-radius:999px;font-size:.85rem;font-weight:700;border:1px solid var(--line);transition:transform .2s,background .2s}
+    .btn:hover{transform:translateY(-2px)}.btn.primary{background:var(--accent);color:#15200f;border-color:var(--accent)}.btn.secondary{background:transparent;color:var(--text)}
+    .hero-card{border:1px solid var(--line);background:linear-gradient(145deg,#202a22,#151b17);border-radius:24px;padding:28px;position:relative;overflow:hidden}
+    .hero-card:before{content:"";position:absolute;width:240px;height:240px;border-radius:50%;background:rgba(199,239,120,.08);right:-90px;top:-100px;filter:blur(3px)}
+    .profile-photo {
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 12px auto 28px;
+    border: 2px solid #c7ef78;
+}
+
+.profile-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+    .card-label{font: .68rem 'DM Mono',monospace;color:var(--muted);letter-spacing:.12em;text-transform:uppercase}
+    .focus{font-size:1.25rem;font-weight:700;margin:7px 0 18px}
+    .chips{display:flex;gap:8px;flex-wrap:wrap}.chip{font-size:.72rem;color:#d7dfd5;border:1px solid #39443a;padding:7px 10px;border-radius:999px}
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:22px}
+    .stat{padding:15px;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.07);border-radius:13px}
+    .stat strong{display:block;font-size:1.45rem;color:var(--accent);letter-spacing:-.06em}.stat span{font-size:.68rem;color:var(--muted)}
+    .section{padding:88px 0;border-top:1px solid rgba(255,255,255,.07)}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:25px;margin-bottom:36px}
+    h2{font-size:clamp(2.1rem,4vw,3.4rem);letter-spacing:-.07em;line-height:1.05;margin:10px 0 0}
+    .section-note{max-width:370px;color:var(--muted);font-size:.9rem}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .panel{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:25px}
+    .panel p{color:#c0c9c0;margin:8px 0 0}.panel h3{margin:0;font-size:1rem}
+    .timeline{display:grid;gap:14px}
+    .job{display:grid;grid-template-columns:175px 1fr;gap:28px;padding:26px;background:var(--panel);border:1px solid var(--line);border-radius:18px}
+    .date{font: .72rem 'DM Mono',monospace;color:var(--accent);padding-top:5px}
+    .job h3{margin:0;font-size:1.2rem;letter-spacing:-.03em}.company{color:var(--muted);font-size:.86rem;margin:3px 0 14px}
+    .job ul{margin:0;padding-left:18px;color:#c0c9c0;font-size:.9rem}.job li{padding:3px 0 7px}
+    .tagline{display:inline-block;font-size:.68rem;color:var(--accent);border:1px solid #48583b;padding:5px 9px;border-radius:99px;margin:0 0 12px}
+    .skill-tabs{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:18px}
+    .tab{cursor:pointer;border:1px solid var(--line);background:var(--panel);color:var(--muted);padding:10px 15px;border-radius:999px;font-size:.82rem;transition:.2s}
+    .tab[aria-selected="true"],.tab:hover{background:var(--accent);border-color:var(--accent);color:#17200f}
+    .skill-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .skill{background:var(--panel);border:1px solid var(--line);padding:19px;border-radius:14px;min-height:90px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .skill span{font-weight:650}.skill small{font: .65rem 'DM Mono',monospace;color:var(--muted)}
+    .project-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .project{background:linear-gradient(145deg,#1c251e,#151b17);border:1px solid var(--line);border-radius:18px;padding:26px}
+    .project .number{font: .75rem 'DM Mono',monospace;color:var(--accent)}
+    .project h3{font-size:1.35rem;letter-spacing:-.04em;margin:16px 0 9px}.project p{color:#bdc7bd;font-size:.9rem;margin:0}
+    .metric{display:inline-flex;margin-top:20px;padding:8px 11px;border-radius:9px;background:#293522;color:var(--accent);font: .75rem 'DM Mono',monospace}
+    .edu-list{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .edu{background:var(--panel);border:1px solid var(--line);border-radius:15px;padding:20px}.edu .year{font: .7rem 'DM Mono',monospace;color:var(--accent)}.edu h3{font-size:.96rem;margin:10px 0 4px}.edu p{font-size:.8rem;color:var(--muted);margin:0}
+    .extra-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .list{margin:12px 0 0;padding:0;list-style:none}.list li{padding:11px 0;border-top:1px solid var(--line);color:#c2cbc2;font-size:.86rem}.list b{color:var(--text)}
+    .contact{background:var(--accent);color:#17200f;border-radius:24px;padding:42px;display:flex;align-items:center;justify-content:space-between;gap:25px}
+    .contact h2{max-width:560px}.contact p{color:#3f5033}.contact .btn{border-color:#17200f;color:#17200f}
+    .contact-links {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.contact-links .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  text-decoration: none;
+}
+    footer{padding:28px 0;color:var(--muted);font-size:.75rem;display:flex;justify-content:space-between;gap:15px}
+    .reveal{opacity:0;transform:translateY(16px);transition:opacity .65s,transform .65s}.reveal.visible{opacity:1;transform:none}
+    @media(max-width:800px){.hero{grid-template-columns:1fr;gap:35px;padding:70px 0}.hero-card{max-width:520px}.section-head{display:block}.section-note{margin-top:15px}.job{grid-template-columns:1fr;gap:10px}.skill-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:600px){.wrap{width:min(100% - 30px,var(--max))}.nav{height:66px}.menu{display:block}.navlinks{display:none;position:absolute;top:65px;left:15px;right:15px;padding:10px;background:#171d19;border:1px solid var(--line);border-radius:15px;flex-direction:column;align-items:stretch}.navlinks.open{display:flex}.navlinks a{padding:12px}.hero{min-height:0;padding:66px 0}.intro{font-size:.98rem}.section{padding:65px 0}.about-grid,.project-grid,.extra-grid,.edu-list{grid-template-columns:1fr}.skill-grid{grid-template-columns:1fr 1fr}.skill{padding:14px;min-height:78px}.contact{padding:28px;display:block}.contact .btn{margin-top:14px}footer{display:block}footer span{display:block;margin-top:6px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}*{transition:none!important}}
+  </style>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap nav">
+    <a class="brand" href="#home" aria-label="Harsh Chougule home">HC<span>.</span></a>
+    <button class="menu" id="menuBtn" aria-expanded="false" aria-controls="navlinks">Menu ☰</button>
+    <nav class="navlinks" id="navlinks" aria-label="Main navigation">
+      <a href="#home" class="active">Home</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#education">Education</a><a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="wrap hero" id="home">
+    <div class="reveal">
+      <div class="eyebrow">Electrical Engineer · Energy & Sustainability</div>
+      <h1>Harsh<br><em>Chougule.</em></h1>
+      <p class="intro">Electrical engineering professional with three years of experience in the power sector and energy policy, now pursuing advanced studies in renewable energy. Interested in building practical, efficient and sustainable energy solutions.</p>
+      <div class="actions">
+        <a class="btn primary" href="#experience">Explore my experience ↗</a>
+        <a class="btn secondary" href="Harsh_Chougule_CV.pdf" download>Download CV ↓</a>
+      </div>
+    </div>
+    <aside class="hero-card reveal">
+      <div class="profile-photo">
+    <img src="harsh.jpg" alt="Harsh Chougule">
+</div>
+      <div class="card-label">Areas of focus</div>
+      <div class="focus">Battery Energy Storage System.<br>Energy Optimization.</div>
+      <div class="chips"><span class="chip">Energy policy</span><span class="chip">Regulatory affairs</span><span class="chip">Renewables</span><span class="chip">Demand response</span></div>
+      <div class="stats">
+        <div class="stat"><strong>3 yrs</strong><span>Power sector experience</span></div>
+        <div class="stat"><strong>2×</strong><span>Star Employee</span></div>
+        <div class="stat"><strong>40+</strong><span>Team members coordinated</span></div>
+      </div>
+    </aside>
+  </section>
+
+  <section class="section" id="about"><div class="wrap">
+    <div class="section-head reveal"><div><div class="kicker">01 / About</div><h2>Engineering with<br>purpose.</h2></div><p class="section-note">A blend of power-sector experience, analytical work and hands-on engineering projects — with a focus on a more sustainable energy future.</p></div>
+    <div class="about-grid">
+      <article class="panel reveal"><h3>Professional overview</h3><p>Electrical Engineering graduate with experience across regulatory compliance, tariff modelling, demand-side management and power-sector projects. My work has included supporting regulatory filings, reviewing project and commercial documents, and analysing electricity consumption patterns.</p></article>
+      <article class="panel reveal"><h3>What motivates me</h3><p>I enjoy connecting technical engineering with real-world energy challenges — from improving grid reliability and energy efficiency to exploring renewable-powered mobility and sustainable solutions.</p></article>
+    </div>
+  </div></section>
+
+  <section class="section" id="experience"><div class="wrap">
+    <div class="section-head reveal"><div><div class="kicker">02 / Experience</div><h2>Where I've<br>made an impact.</h2></div><p class="section-note">Select a role to explore the work, responsibilities and outcomes behind each experience.</p></div>
+    <div class="timeline">
+      <article class="job reveal"><div><div class="date">JUL 2023 — JUL 2026</div></div><div><span class="tagline">Power sector</span><h3>Lead Associate</h3><div class="company">Tata Power</div><ul><li>Worked with the team liaising with the Maharashtra Electricity Regulatory Commission (MERC), contributing to regulatory compliance, tariff modelling, demand-side management initiatives and regulatory filings.</li><li>Analysed consumer electricity consumption patterns and proposed demand-side management programmes to improve energy efficiency.</li><li>Supported pilot demand-response projects by identifying flexible loads for peak-period load shifting and improved grid reliability.</li><li>Assisted in preparing an Aggregate Revenue Requirement (ARR) of ₹6,000 crore and a Multi-Year Tariff Petition for FY 2025–26 to 2029–30.</li><li>Reviewed Power Purchase Agreements, Letters of Intent and Detailed Project Reports for alignment with regulatory requirements; maintained 100% compliance with directives.</li><li>Contributed to building a financial tariff model using Microsoft Excel. Recognised as Star Employee of the Month twice.</li></ul></div></article>
+      <article class="job reveal"><div><div class="date">FEB 2023 — APR 2023</div></div><div><span class="tagline">Internship</span><h3>Project / Sales Management Intern</h3><div class="company">Custom Works</div><ul><li>Planned marketing and material sourcing activities to support brand consistency.</li><li>Led a three-member team for consumer relationship management.</li><li>Initiated project deals and maintained customer communication throughout the process, achieving a 50% conversion rate.</li></ul></div></article>
+      <article class="job reveal"><div><div class="date">JAN 2020 — JAN 2023</div></div><div><span class="tagline">Formula Student</span><h3>Accumulator Head</h3><div class="company">Team SPCE Racing</div><ul><li>Researched cell technologies and helped develop an optimal battery pack for the college Formula Student racing team.</li><li>Contributed to the concept, design and fabrication of a custom high-voltage battery pack, achieving 105 Wh/kg energy density.</li><li>Reduced battery-pack weight by 16.4% compared with the previous design.</li><li>Coordinated and collaborated with a 40-member multidisciplinary team.</li></ul></div></article>
+    </div>
+  </div></section>
+
+  <section class="section" id="skills"><div class="wrap">
+    <div class="section-head reveal"><div><div class="kicker">03 / Skills</div><h2>Tools of the<br>trade.</h2></div><p class="section-note">Switch between categories to explore the tools and capabilities listed in my CV.</p></div>
+    <div class="skill-tabs" role="tablist" aria-label="Skill categories">
+      <button class="tab" role="tab" aria-selected="true" data-group="engineering">Engineering & technical</button>
+      <button class="tab" role="tab" aria-selected="false" data-group="productivity">Productivity tools</button>
+      <button class="tab" role="tab" aria-selected="false" data-group="strengths">Professional strengths</button>
+    </div>
+    <div class="skill-grid" id="skillGrid" aria-live="polite">
+      <div class="skill"><span>MATLAB</span><small>01</small></div><div class="skill"><span>Python</span><small>02</small></div><div class="skill"><span>KiCad</span><small>03</small></div><div class="skill"><span>LTspice</span><small>04</small></div><div class="skill"><span>EnergyPlan</span><small>05</small></div>
+    </div>
+  </div></section>
+
+  <section class="section" id="projects"><div class="wrap">
+    <div class="section-head reveal"><div><div class="kicker">04 / Selected work</div><h2>Projects &<br>achievements.</h2></div><p class="section-note">Engineering work and competition results that reflect practical problem-solving and collaboration.</p></div>
+    <div class="project-grid">
+      <article class="project reveal"><div class="number">PROJECT 01</div><h3>Solar-Powered Electric Vehicle Charging Station</h3><p>Designed and developed a 1-kW charging circuit powered by rooftop solar panels at the college. The closed-loop system achieved 90% efficiency and incorporated a fail-safe charging system.</p><span class="metric">1 kW · 90% efficiency</span></article>
+      <article class="project reveal"><div class="number">PROJECT 02</div><h3>High-Voltage Formula Student Battery Pack</h3><p>Contributed to research, conceptualisation, design and fabrication of a custom battery pack for the college racing team, targeting Formula Student Bharat.</p><span class="metric">105 Wh/kg · 16.4% lighter</span></article>
+      <article class="project reveal"><div class="number">PROJECT 03</div><h3> Assessment of Portugal’s Energy System Absorption Capacity Under Rapid Electricity Demand Growth </h3><p>Contributed to the data collection, hourly profile modeling, and simulation of Portugal’s grid to analyze long-term electricity absorption capacity; forecasted regional multi-sector energy demand to 2040 by aligning 2025 transport and fossil fuel baselines with national policy frameworks; and evaluated grid stress and infrastructure impact by engineering and analyzing a 200 MW data center workload injection into the 2040 model.</p><span class="metric">Work in Progress</span></article>
+    </div>
+    <div class="panel reveal" style="margin-top:16px"><h3>Competition highlights</h3><ul class="list"><li><b>Formula Bharat 2023</b> — 3rd in Engineering Design Presentation; 2nd in Concept Goals Management Report.</li><li><b>Formula Green 2021 Virtuals</b> — Safest Formula Green Car Award; Overall Winners in EV Category.</li><li><b>VJTI Robotics Challenge</b> — 4th in Group Stage, December 2021.</li></ul></div>
+  </div></section>
+
+  <section class="section" id="education"><div class="wrap">
+    <div class="section-head reveal"><div><div class="kicker">05 / Education</div><h2>Learning, always.</h2></div><p class="section-note">Academic foundations in electrical engineering, alongside ongoing advanced studies in renewable energy.</p></div>
+    <div class="edu-list">
+      <article class="edu reveal"><div class="year">2019 — 2023</div><h3>Bachelor's Degree</h3><p>BVB's Sardar Patel College of Engineering</p></article>
+      <article class="edu reveal"><div class="year">2019</div><h3>Class 12</h3><p>Prakash College of Science</p></article>
+      <article class="edu reveal"><div class="year">2017</div><h3>Class 10</h3><p>Marol Education Academy's High School</p></article>
+    </div>
+    <div class="panel reveal" style="margin-top:14px">
+
+  <span style="color:var(--accent); font-size:13px; letter-spacing:1px;">
+    2026 – 2028
+  </span>
+
+  <h3 style="margin-top:10px;">Master's in Renewable Energies</h3>
+
+  <p style="color:var(--muted); margin-bottom:16px;">
+    InnoEnergy
+  </p>
+
+  <div style="border-left:2px solid var(--accent); padding-left:16px; margin-top:12px;">
+
+    <div style="margin-bottom:14px;">
+      <strong>Instituto Superior Técnico</strong>
+      <p style="color:var(--muted); margin:4px 0;">
+        2026 – 2027
+      </p>
+    </div>
+
+    <div>
+      <strong>Second University (TBD)</strong>
+      <p style="color:var(--muted); margin:4px 0;">
+        2027 – 2028
+      </p>
+    </div>
+
+  </div>
+
+</div></section>
+
+  <section class="section" id="more"><div class="wrap">
+    <div class="section-head reveal"><div><div class="kicker">06 / Beyond work</div><h2>More about me.</h2></div></div>
+    <div class="extra-grid">
+      <article class="panel reveal"><h3>Volunteering</h3><ul class="list"><li><b>Centre for Social Action, Mumbai</b> — Fundraising volunteer supporting rural women's products and community development.</li><li><b>Tata Engage</b> — Mentored a Gandhi Fellowship participant on time management, team dynamics and strategic planning.</li></ul></article>
+      <article class="panel reveal"><h3>Languages & interests</h3><ul class="list"><li><b>Languages:</b> Marathi (mother tongue), English (TOEFL 102/120), Hindi (intermediate), Swedish (beginner).</li><li><b>Interests:</b> Football, cycling, marathon events and reading.</li></ul></article>
+    </div>
+  </div></section>
+
+ <section class="section" id="contact">
+  <div class="wrap">
+
+    <div class="contact reveal">
+
+      <div>
+        <div class="kicker" style="color:#40552c">Let's connect</div>
+        <h2>Interested in building a more sustainable future?</h2>
+        <p>I'd be glad to connect about energy, engineering and opportunities to make an impact.</p>
+      </div>
+
+      <div class="contact-links">
+
+        <!-- Email -->
+        <a class="btn" href="mailto:harshchougule755@gmail.com">
+          <svg width="18" height="18" viewBox="0 0 24 24"
+               fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="5" width="18" height="14" rx="2"/>
+            <path d="m3 7 9 6 9-6"/>
+          </svg>
+          Email me ↗
+        </a>
+
+        <!-- LinkedIn -->
+        <a class="btn"
+           href="https://www.linkedin.com/in/harshchougule/"
+           target="_blank"
+           rel="noopener noreferrer">
+
+          <svg width="18" height="18" viewBox="0 0 24 24"
+               fill="currentColor">
+            <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.44-2.13 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.26 2.37 4.26 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.78C.8 0 0 .77 0 1.72v20.56C0 23.23.8 24 1.78 24h20.44c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0Z"/>
+          </svg>
+          LinkedIn ↗
+        </a>
+
+      </div>
+    </div>
+
+    <footer>
+      <span>© <span id="year"></span> Harsh Chougule</span>
+      <span>Designed as a personal portfolio · Built with HTML, CSS & JavaScript</span>
+    </footer>
+
+  </div>
+</section>
+</main>
+<script>
+  const menuBtn=document.getElementById('menuBtn'), nav=document.getElementById('navlinks');
+  menuBtn.addEventListener('click',()=>{const open=nav.classList.toggle('open');menuBtn.setAttribute('aria-expanded',String(open));});
+  nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');}));
+  const skillData={
+    engineering:[['MATLAB','01'],['Python','02'],['KiCad','03'],['LTspice','04']],
+    productivity:[['Microsoft Word','01'],['Microsoft Excel','02'],['Microsoft PowerPoint','03']],
+    strengths:[['Regulatory compliance','01'],['Tariff modelling','02'],['Demand-side management','03'],['Team coordination','04'],['Consumer relationship management','05'],['Technical research','06']]
+  };
+  const grid=document.getElementById('skillGrid');
+  document.querySelectorAll('.tab').forEach(btn=>btn.addEventListener('click',()=>{
+    document.querySelectorAll('.tab').forEach(b=>b.setAttribute('aria-selected','false'));
+    btn.setAttribute('aria-selected','true');
+    grid.innerHTML=skillData[btn.dataset.group].map(([name,num])=>`<div class="skill"><span>${name}</span><small>${num}</small></div>`).join('');
+  }));
+  const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target);}}),{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+  const sections=[...document.querySelectorAll('main section[id]')], links=[...nav.querySelectorAll('a')];
+  const navObserver=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id));}}),{rootMargin:'-35% 0px -55% 0px'});
+  sections.forEach(s=>navObserver.observe(s));
+  document.getElementById('year').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
